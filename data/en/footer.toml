@@ -1,0 +1,37 @@
+# Links in footer
+
+[[links]]
+	category = "Get Involved"
+	link_arr = [
+		["Feedback", 'https://github.com/alibaba/inclavare-containers/issues'],
+		["Community","https://openanolis.org/"],
+		["Wiki","https://github.com/alibaba/inclavare-containers/wiki"],
+		["Email","mailto:inclavare-containers@OpenAnolis.org"]
+	]
+
+[[links]]
+	category = "Other Community Project"
+	link_arr = [
+        ["Cloud Kernel", 'https://alibaba.github.io/cloud-kernel/'],
+        ["Dragonwell ", 'http://dragonwell-jdk.io/'],
+        ["Diagnose-tools", 'https://openanolis.org/projects/diagnose-tools/overview/'],
+        ["Occlum", 'https://occlum.io/'],
+	]
+
+[[links]]
+        category = "Relevant Introductions"
+        link_arr = [
+                ["Brand", 'https://openanolis.org/brand/'],
+                ["Legal Notice", 'https://openanolis.org/legal/'],
+                ["Privacy Policy", 'https://openanolis.org/privacy/'],
+        ]
+
+# qrcode
+[[qrcode]]
+	img = "img/qrcode/opennolis-weixin.jpg"
+	description = "OpenAnolis Wechat Official Account"
+
+[[qrcode]]
+	img = "img/qrcode/inclavare-dingding.jpg"
+	description = "Inclavare Containers DingTalk Group"
+

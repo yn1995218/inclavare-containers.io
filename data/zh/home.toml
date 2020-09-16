@@ -1,0 +1,31 @@
+[slogan]
+	title = "Inclavare Containers"
+	description = "一种面向机密计算场景的开源Enclave容器运行时技术栈和安全架构。"
+	quick_start_text = "快速开始"
+	quick_start_link = "/guides/qucik-start/"
+	github_link = "https://github.com/alibaba/inclavare-containers"
+
+[[feature]]
+	title = "机密性"
+	description = "旨在帮助用户保护数据使用中的安全性、完整性和机密性"
+	img = "img/home/icon-secret.png"
+[[feature]]
+	title = "标准开放"
+	description = "技术栈全面开源共建、 保持社区中立、兼容社区以及兼容开源生态"
+	img = "img/home/icon-open.png"
+[[feature]]
+	title = "云原生"
+	description = "打造可信业务应用二方产品上云的云原生机密计算通用底座"
+	img = "img/home/icon-cloud-native.png"
+
+[[charpter_description]]
+	title = "什么是Inclavare Containers？"
+	description = "Inclavare Containers是由Alibaba研发的业界首个面向机密计算场景的开源容器运行时。Inclavare Containers抹平了机密计算的高使用门槛，为用户的工作负载提供多种不同的 Enclave 形态，在安全和成本之间提供更多的选择和灵活性。"
+	img = "img/home/ArchitrctureFinal.jpg"
+	img_width = "85%"
+
+[[charpter_description_1]]
+	title = "应用场景"
+	description = "Inclavare Containers广泛应用于区块链，密钥管理，金融，机器学习，人工智能，联邦学习，安全分析，数据租赁，基因计算，边缘计算，物联网应用，安全多方计算等场景。"
+	img = "img/home/stack.jpg"
+	img_width = "85%"

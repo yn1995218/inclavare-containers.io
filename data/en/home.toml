@@ -1,0 +1,35 @@
+[slogan]
+	title = "Inclavare Containers"
+	description = "An open source enclave container runtime and security architecture for confidential computing scenarios."
+	quick_start_text = "Quick Start"
+	quick_start_link = "/guides/qucik-start/"
+	github_link = "https://github.com/alibaba/inclavare-containers"
+
+[[feature]]
+	title = "Confidential"
+	description = "Designed to help users protect the security, integrity and confidentiality of data in use"
+	img = "img/home/icon-secret.png"
+
+
+[[feature]]
+	title = "Open Standard"
+	description = "Fully open source and co-constructed, maintaining community neutrality, compatible communities, and compatible open source ecology"
+    img = "img/home/icon-open.png"
+
+[[feature]]
+	title = "Cloud Native"
+    description = "Create a cloud-native confidential computing universal base for trusted business applications and second-party products to the cloud"
+	img = "img/home/icon-cloud-native.png"
+
+
+[[charpter_description]]
+	title = "What is Inclavare Containers?"
+	description = "Inclavare Containers is the industry's first open source container runtime for confidential computing scenarios developed by Alibaba. Inclavare Containers significantly reduces the user's threshold for use. A variety of different enclave forms are available, providing more choices and flexibility between safety and cost for end users."
+	img = "img/home/ArchitrctureFinal.jpg"
+	img_width = "85%"
+
+[[charpter_description_1]]
+        title = "Application Scenarios"
+        description = "Inclavare Containers is well suited for the scenarios, such as blockchain, key management, finance, machine learning, artificial intelligence, federated learning, security analysis, data leasing, genetic computing, edge computing, Internet of Things applications, secure multi-party computing and the other."
+        img = "img/home/stack.jpg"
+        img_width = "530px"
