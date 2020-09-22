@@ -20,7 +20,7 @@
 
 [[charpter_description]]
 	title = "什么是Inclavare Containers？"
-	description = "Inclavare Containers是由阿里云和蚂蚁集团研发的业界首个面向机密计算场景的开源容器运行时。Inclavare Containers抹平了机密计算的高使用门槛，为用户的工作负载提供多种不同的 Enclave 形态，在安全和成本之间提供更多的选择和灵活性。"
+	description = "Inclavare Containers是由阿里云和蚂蚁集团主导研发，并联合Intel等合作伙伴打造的业界首个面向机密计算场景的开源容器运行时。Inclavare Containers抹平了机密计算的高使用门槛，为用户的工作负载提供多种不同的 Enclave 形态，在安全和成本之间提供更多的选择和灵活性。"
 	img = "img/home/ArchitrctureFinal.jpg"
 	img_width = "85%"
 

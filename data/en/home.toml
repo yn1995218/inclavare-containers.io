@@ -24,7 +24,7 @@
 
 [[charpter_description]]
 	title = "What is Inclavare Containers?"
-	description = "Inclavare Containers is the industry's first open source container runtime for confidential computing scenarios developed by Alibaba Cloud and Ant Group. Inclavare Containers significantly reduces the user's threshold for use. A variety of different enclave forms are available, providing more choices and flexibility between safety and cost for end users."
+	description = "Inclavare Containers, developed by Alibaba Cloud and Ant Group and cooperated with Intel, is the industry's first open source container runtime for confidential computing. Inclavare Containers significantly reduces the user's threshold for use. A variety of different enclave forms are available, providing more choices and flexibility between safety and cost for end users."
 	img = "img/home/ArchitrctureFinal.jpg"
 	img_width = "85%"
 
