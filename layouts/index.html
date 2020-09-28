@@ -12,6 +12,31 @@
 
 {{ partial "back_legacy" . }}
 
+<script>
+    //根据浏览器语言自动切换主页面
+    console.log(navigator.language,navigator.browserLanguage)
+    var language = navigator.appName == 'Netscape'?navigator.language:navigator.browserLanguage;
+    if(language.indexOf('en') > -1) {  //english
+        if(localStorage.getItem("isJudgment") == 1){
+            re()
+        }else{
+            document.location.href = '/en/';
+            localStorage.setItem("isJudgment",1)
+        }
+    }else{ //chinese
+        if(localStorage.getItem("isJudgment") == 1){
+            re()
+        }else{
+            document.location.href = '/';
+            localStorage.setItem("isJudgment",1)
+        }
+    }
+    function re(){
+        localStorage.removeItem("isJudgment")
+        return
+    }
+</script>
+
 <div class="home-background -no-max-width">
 	<!-- <img src="{{ (resources.Get "/img/home/cover.png").RelPermalink }}" /> -->
     <!--<div id="js-home-animation"></div> -->
