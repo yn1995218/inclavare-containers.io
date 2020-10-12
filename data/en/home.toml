@@ -2,7 +2,7 @@
 	title = "Inclavare Containers"
 	description = "An open source enclave container runtime and security architecture for confidential computing scenarios."
 	quick_start_text = "Quick Start"
-	quick_start_link = "/guides/qucik-start/"
+	quick_start_link = "/en/guides/qucik-start/"
 	github_link = "https://github.com/alibaba/inclavare-containers"
 
 [[feature]]
