@@ -1,8 +1,8 @@
 <header class="ss-header">
 	<nav class="navbar" role="navigation" aria-label="main navigation">
 		<div class="navbar-brand">
-			<a class="logo-link" href="{{ "/" | relLangURL }}">
-				<img class="logo" src="{{ (resources.Get "img/logo.png").RelPermalink }}">
+            <a class="logo-link" href="{{ "/" | relLangURL }}">
+				<img class="logo" id="logo-remove-storage" src="{{ (resources.Get "img/logo.png").RelPermalink }}">
 			</a>
 			<div class="-show-mobile">
 				<a id="mobile-menu-icon">
@@ -77,6 +77,10 @@
 <script>
     var removestorage = document.getElementById("remove-storage")
     removestorage.onclick = function(){
+        localStorage.setItem("isJudgment",1)
+    }
+    var logoremovestorage = document.getElementById("logo-remove-storage")
+    logoremovestorage.onclick = function(){
         localStorage.setItem("isJudgment",1)
     }
 </script>
