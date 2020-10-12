@@ -94,7 +94,7 @@ googleAnalytics = "UA-142131411-1"
     [[menu.main]]
 		identifier = "projects"
 		name = "Projects"
-		url = "/projects/"
+		url = "/en/projects/"
         weight = 5
 
 [sitemap]
