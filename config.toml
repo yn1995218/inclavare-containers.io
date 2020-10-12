@@ -74,27 +74,27 @@ googleAnalytics = "UA-142131411-1"
 	[[menu.main]]
 		identifier = "guides"
 		name = "Guide"
-		url = "/guides/"
+		url = "/en/guides/"
 		weight = 1
 	[[menu.main]]
 		identifier = "blog"
 		name = "Blog"
 		url = "/en/blog/"
 		weight = 2
-	[[menu.main]]
-		identifier = "activities"
-		name = "Activity"
-		url = "/activities/"
-		weight = 3
+	#[[menu.main]]
+	#	identifier = "activities"
+	#	name = "Activity"
+	#	url = "/activities/"
+	#	weight = 3
 	[[menu.main]]
         identifier = "community"
         name = "Community"
-        url = "https://openanolis.org/community/main/overview/"
+        url = "https://openanolis.org/en/community/main/overview/"
         weight = 4
     [[menu.main]]
 		identifier = "projects"
 		name = "Projects"
-		url = "/projects/"
+		url = "/en/projects/"
         weight = 5
 
 [sitemap]
