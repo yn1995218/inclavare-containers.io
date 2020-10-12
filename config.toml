@@ -89,7 +89,7 @@ googleAnalytics = "UA-142131411-1"
 	[[menu.main]]
         identifier = "community"
         name = "Community"
-        url = "https://openanolis.org/community/main/overview/"
+        url = "https://openanolis.org/en/community/main/overview/"
         weight = 4
     [[menu.main]]
 		identifier = "projects"
