@@ -81,11 +81,11 @@ googleAnalytics = "UA-142131411-1"
 		name = "Blog"
 		url = "/en/blog/"
 		weight = 2
-	[[menu.main]]
-		identifier = "activities"
-		name = "Activity"
-		url = "/activities/"
-		weight = 3
+	#[[menu.main]]
+	#	identifier = "activities"
+	#	name = "Activity"
+	#	url = "/activities/"
+	#	weight = 3
 	[[menu.main]]
         identifier = "community"
         name = "Community"
