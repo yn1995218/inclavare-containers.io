@@ -221,12 +221,13 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 5vh 0;
+    // margin: 5vh 0;
     padding: 32px 0;
   }
 
   .description-container {
     width: 100%;
+    margin-bottom: 40px;
 
     @include mobile {
       width: 100%;
@@ -242,6 +243,10 @@
     font-size: 30px;
     margin: 20px 0;
     font-weight: 450;
+    font-family: Alibaba-PuHuiTi-M;
+    font-size: 32px;
+    color: #010008;
+    letter-spacing: 0;
   }
 
   .img-container {
@@ -250,7 +255,7 @@
     flex-direction: row;
     justify-content: center;
     margin: 0 auto; 
-    text-align: center;
+    // text-align: center;
 
     @include mobile {
       width: 100%;
@@ -385,4 +390,80 @@
     text-orientation: mixed;
     transform: rotate(180deg);
   }
+}
+// 改版新增
+@media screen and (max-width: 568px) {
+    .img-container .in-container img,.img-container .in-container p {
+        width: 100%!important;
+        padding:10px 0!important;;
+    }
+    .in-container div{
+        width: 100%!important;
+    }
+}
+.in-container{
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap:wrap;
+    padding:30px 20px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.15);
+}
+.in-container-description{
+    width: 45%;
+    font-family: AlibabaPuHuiTiR;
+    padding: 10px 20px 0 30px;
+    font-size: 16px;
+    color: #3D3D3D;
+    letter-spacing: 0;
+    line-height: 30px;
+}
+.in-container-table{
+    padding: 0;
+    width: 40%;
+    
+    table{
+        border: solid 1px #DEDEDE;
+
+        th{
+            width:30%;
+            font-family: Alibaba-PuHuiTi-M;
+            font-size: 16px;
+            color: #010008;
+            letter-spacing: 0;
+        }
+
+        td{
+            line-height: 26px;
+            padding: 10px!important;
+            color: #3D3D3D;
+        }
+    }
+}
+
+.current-state-block{
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    div:nth-child(1){
+        float: left; 
+        width: 58px;
+        height: 58px;
+        line-height: 58px;
+        background: #418FF4;
+        font-family: Alibaba-PuHuiTi-M;
+        font-size: 24px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+    div:nth-child(2){
+        padding: 18px 50px 18px 80px; 
+        background-image: linear-gradient(90deg, #EBEFF4 5%, rgba(255,255,255,0.00) 100%);
+        font-family: AlibabaPuHuiTiR;
+        font-size: 16px;
+        color: #3D3D3D;
+        letter-spacing: 0;
+    }
+
 }

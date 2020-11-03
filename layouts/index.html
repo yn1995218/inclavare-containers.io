@@ -11,8 +11,15 @@
 {{ $data := $langData.home }}
 
 {{ partial "back_legacy" . }}
-
+<link href="{{ "/css/dmaku.css" | relURL }}" rel="stylesheet">
+<script src="{{ (resources.Get "js/jquery.min.js").RelPermalink }}"></script>
+<script src="{{ (resources.Get "js/jquery.SuperSlide2.1.2.js").RelPermalink }}"></script>
+<!-- <script type="text/javascript" src="js/jquery.SuperSlide2.1.2.js"></script> -->
 <script>
+    $(function() {
+		jQuery(".event_box").slide({ titCell: ".parHd li", mainCell: ".parBd", defaultPlay: false,  prevCell: ".sPrev", nextCell: ".sNext" });
+		jQuery(".parHd").slide({ mainCell: " ul", vis: 6, effect: "leftLoop", defaultPlay: false, prevCell: ".sPrev", nextCell: ".sNext" });
+	});
     //根据浏览器语言自动切换主页面
     console.log(navigator.language,navigator.browserLanguage)
     var language = navigator.appName == 'Netscape'?navigator.language:navigator.browserLanguage;
@@ -35,8 +42,8 @@
         localStorage.removeItem("isJudgment")
         return
     }
+    
 </script>
-
 <div class="home-background -no-max-width">
 	 <img src="{{ (resources.Get "/img/home/3d.gif").RelPermalink }}" />
     <!--<div id="js-home-animation"></div> -->
@@ -75,7 +82,7 @@
 	<div class="home-container">
 		{{ range $i,$d := $data.charpter_description }}
 			<div class="container">
-				<div class="description-container">
+				<!-- <div class="description-container">
 					<h3 class="title">{{ $d.title }} </h3>
 					<p class="home-description">
 						{{ $d.description }}
@@ -86,10 +93,24 @@
 					<img {{if isset $d "img_width"}}style="width:{{$d.img_width}};"{{end}}
 						src="{{ (resources.Get $d.img).RelPermalink }}"
 					>
-				</div>
+                </div> -->
+                <div class="description-container">
+					<h3 class="title">{{ $d.title }} </h3>
+					
+                </div>
+                <div class="img-container">
+                    <div class="in-container">
+                        <img {{if isset $d "img_width"}}style="width:{{$d.img_width}};"{{end}}
+                            src="{{ (resources.Get $d.img).RelPermalink }}"
+                        >
+                        <p class="home-description in-container-description">
+                            {{ $d.description }}
+                        </p>
+                    </div>
+                </div>
 			</div>
 		{{ end }}
-		{{ range $i,$d := $data.charpter_description_1 }}
+		<!-- {{ range $i,$d := $data.charpter_description_1 }}
 			<div class="container">
 				<div class="description-container">
 					<h3 class="title">{{ $d.title }} </h3>
@@ -99,12 +120,10 @@
 				</div>
 
 				<div class="img-container">
-					<!-- <img {{if isset $d "img_width"}}style="width:{{$d.img_width}}"{{end}}
-						src="{{ (resources.Get $d.img).RelPermalink }}"
-					> -->
+					
 				</div>
 			</div>
-		{{ end }}
+		{{ end }} -->
         {{ range $i,$d := $data.charpter_description_2 }}
             <div class="container">
                 <div class="description-container">
@@ -134,10 +153,160 @@
                     <img {{if isset $d "img_width"}}style="width:{{$d.img_width}}"{{end}}
                         src="{{ (resources.Get $d.img).RelPermalink }}"
                     >
+
                 </div>
             </div>
         {{ end }}
-
+        <!-- 新增 -->
+        {{ range $i,$d := $data.charpter_description_4 }}
+            <div class="container">
+                <div class="description-container">
+                    <h3 class="title">{{ $d.title }} </h3>
+                </div>
+                <div class="img-container">
+                    <div class="in-container">
+                        <div style="width: 58%;">
+                            <img {{if isset $d "img_width"}}style="width:{{$d.img_width}}"{{end}}
+                            src="{{ (resources.Get $d.img).RelPermalink }}"
+                        >
+                        </div>
+                        
+                        <div class="in-container-description in-container-table">
+                            <table border="1" bgcolor="#F2F2F2">
+                                {{ range $i,$d := $data.description4_table }}
+                                <tr>
+                                  <th>{{ $d.name }}</th>
+                                  <td height="78px">{{ $d.description }}</td>
+                                </tr>
+                                {{end}}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{ end }}
+        <!-- 起源和历史 -->
+        {{ range $i,$d := $data.charpter_description_7 }}
+        <div class="container">
+            <div class="description-container">
+                <h3 class="title">{{ $d.title }} </h3>
+            </div>
+            <div class="img-container">
+                <div class="event_box">
+                    <div class="space_div">
+                        <p class="left_space"></p>
+                        <p class="right_space"></p>
+                    </div>
+                    <div class="parHd clearfix">
+                        <ul>
+                            {{ range $i,$d := $data.charpter_description_7_content}}
+                            <li style="width:175px">
+                                <div class="description {{$d.class}}" {{if isset $d "bottom"}}style="bottom: {{$d.bottom}}"{{end}} 
+                                {{if isset $d "top"}}style="top: {{$d.top}}"{{end}}>
+                                    <div class="desc-title">{{$d.title}}</div>
+                                    {{if isset $d "description"}}{{$d.description}}{{end}}<br>
+                                    {{if isset $d "description_1"}}{{$d.description_1}}{{end}}<br>
+                                    {{if isset $d "description_2"}}{{$d.description_2}}{{end}}<br>
+                                    {{if isset $d "description_3"}}{{$d.description_3}}{{end}}
+                                    {{if isset $d "description_4"}}{{$d.description_4}}{{end}}
+                                </div>
+                                <span></span> 
+                                <div class="tip {{$d.triangle}}" {{if isset $d "triangle_position"}}style="position: absolute;top: -105px;left: 5px;"
+                                {{else}}style="position: absolute;top: 0px;left: 5px;"
+                                {{end}} >
+                                    <p style="color: #000000;">{{$d.time}}</p>
+                                    <div class="arrow {{$d.triangle}}"></div>
+                                </div>
+                            </li> 
+                            {{end}}
+                            <!-- <li>
+                                <div class="description desc-title" style="bottom: -50px;">顿悟</div>
+                                <span></span>
+                                <div class="tip bottom" style="position: absolute;
+                                top: -85px;"><p style="color: #000000;">2016.11.12</p><div class="arrow"></div></div>
+                            </li> -->
+                           <!--  <li>
+                                <div class="description" style="top: -50px;">    
+                                <div class="desc-title">PoC</div>
+                                    实现rune原型
+                                </div>
+                                <span></span>
+                                <div class="tip top"><p style="color: #000000;">2020.02</p><div class="arrow top"></div></div>
+                            </li> -->
+                            <!-- <li>
+                                <div class="description desc-long" style="bottom: -135px;">
+                                    <div class="desc-title">项目开源</div>
+                                    发布0.1.0版本<br>
+                                    首先支持Occlum enclave runtime<br>
+                                    基于SGX 1硬件
+                                </div>
+                                <span></span>
+                                <div class="tip bottom" style="position: absolute;
+                                top: -85px;"><p style="color: #000000;">2020.05</p><div class="arrow"></div></div>
+                                 
+                            </li> -->
+                            <!-- <li>
+                                <div class="description desc-longer" style="top: -75px;">    
+                                <div class="desc-title">发布0.2.0版本</div>
+                                开源了shim和runectl（后更名为sgx-tools）<br>
+                                从host侧加载PAL<br>
+                                PAL API更新为v2</div>
+                                <span></span>
+                                <div class="tip top"><p style="color: #000000;">2020.06</p><div class="arrow top"></div></div>
+                                 
+                            </li>
+                            <li>
+                                <div class="description desc-long" style="bottom: -135px;">
+                                <div class="desc-title">发布0.3.0版本</div>
+                                支持创建机密计算K8s集群<br>
+                                适配v33 SGX in-tree驱动<br>
+                                提供RPM/DEB安装包</div>
+                                <span></span>
+                                <div class="tip bottom" style="position: absolute;
+                                top: -85px;"><p style="color: #000000;">2020.07</p><div class="arrow"></div></div>
+                            </li> -->
+                            <!-- <li>
+                            </li> -->
+                            
+                        </ul>
+                        <a class="sPrev"><img src="{{ (resources.Get "/img/left.png").RelPermalink }}" /></a>
+                        <!-- <img src="{{ (resources.Get "/img/left.png").RelPermalink }}" />
+                        <img src="{{ (resources.Get "/img/right.png").RelPermalink }}" /> -->
+                        <a class="sNext"><img src="{{ (resources.Get "/img/right.png").RelPermalink }}" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{end}}
+        {{ range $i,$d := $data.charpter_description_5 }}
+            <div class="container">
+                <div class="description-container">
+                    <h3 class="title">{{ $d.title }} </h3>
+                </div>
+                <div class="img-container">
+                    {{ range $i,$d := $data.Current_state }}
+                    <div class="current-state-block">
+                        <div>{{$d.number}}</div>
+                        <div> {{ $d.description }}</div>
+                    </div>
+                    {{end}}
+                </div>
+            </div>
+        {{ end }}
+        {{ range $i,$d := $data.charpter_description_6 }}
+            <div class="container">
+                <div class="description-container">
+                    <h3 class="title">{{ $d.title }} </h3>
+                </div>
+                <div class="img-container">
+                    <div>
+                        <img {{if isset $d "img_width"}}style="width:{{$d.img_width}}"{{end}}
+                        src="{{ (resources.Get $d.img).RelPermalink }}"
+                    >
+                    </div>
+                </div>
+            </div>
+        {{ end }}
 	</div>
 </div>
 
