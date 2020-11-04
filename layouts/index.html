@@ -11,10 +11,8 @@
 {{ $data := $langData.home }}
 
 {{ partial "back_legacy" . }}
-<link href="{{ "/css/dmaku.css" | relURL }}" rel="stylesheet">
 <script src="{{ (resources.Get "js/jquery.min.js").RelPermalink }}"></script>
 <script src="{{ (resources.Get "js/jquery.SuperSlide2.1.2.js").RelPermalink }}"></script>
-<!-- <script type="text/javascript" src="js/jquery.SuperSlide2.1.2.js"></script> -->
 <script>
     $(function() {
 		jQuery(".event_box").slide({ titCell: ".parHd li", mainCell: ".parBd", defaultPlay: false,  prevCell: ".sPrev", nextCell: ".sNext" });
@@ -82,27 +80,16 @@
 	<div class="home-container">
 		{{ range $i,$d := $data.charpter_description }}
 			<div class="container">
-				<!-- <div class="description-container">
-					<h3 class="title">{{ $d.title }} </h3>
-					<p class="home-description">
-						{{ $d.description }}
-					</p>
-				</div>
-
-				<div class="img-container">
-					<img {{if isset $d "img_width"}}style="width:{{$d.img_width}};"{{end}}
-						src="{{ (resources.Get $d.img).RelPermalink }}"
-					>
-                </div> -->
                 <div class="description-container">
 					<h3 class="title">{{ $d.title }} </h3>
 					
                 </div>
                 <div class="img-container">
                     <div class="in-container">
-                        <img {{if isset $d "img_width"}}style="width:{{$d.img_width}};"{{end}}
-                            src="{{ (resources.Get $d.img).RelPermalink }}"
-                        >
+                        <div style="width: 50%;">
+                            <img {{if isset $d "img_width"}}style="width:{{$d.img_width}};height:auto"{{end}}
+                                src="{{ (resources.Get $d.img).RelPermalink }}" >
+                        </div>
                         <p class="home-description in-container-description">
                             {{ $d.description }}
                         </p>
@@ -110,20 +97,6 @@
                 </div>
 			</div>
 		{{ end }}
-		<!-- {{ range $i,$d := $data.charpter_description_1 }}
-			<div class="container">
-				<div class="description-container">
-					<h3 class="title">{{ $d.title }} </h3>
-					<p class="home-description">
-						{{ $d.description }}
-					</p>
-				</div>
-
-				<div class="img-container">
-					
-				</div>
-			</div>
-		{{ end }} -->
         {{ range $i,$d := $data.charpter_description_2 }}
             <div class="container">
                 <div class="description-container">
@@ -134,7 +107,7 @@
                 </div>
 
                 <div class="img-container">
-                    <img {{if isset $d "img_width"}}style="width:{{$d.img_width}}"{{end}}
+                    <img {{if isset $d "img_width"}}style="width:{{$d.img_width}};height:auto"{{end}}
                         src="{{ (resources.Get $d.img).RelPermalink }}"
                     >
                 </div>
@@ -150,7 +123,7 @@
                 </div>
 
                 <div class="img-container">
-                    <img {{if isset $d "img_width"}}style="width:{{$d.img_width}}"{{end}}
+                    <img {{if isset $d "img_width"}}style="width:{{$d.img_width}};height:auto"{{end}}
                         src="{{ (resources.Get $d.img).RelPermalink }}"
                     >
 
@@ -166,7 +139,7 @@
                 <div class="img-container">
                     <div class="in-container">
                         <div style="width: 58%;">
-                            <img {{if isset $d "img_width"}}style="width:{{$d.img_width}}"{{end}}
+                            <img {{if isset $d "img_width"}}style="width:{{$d.img_width}};height:auto"{{end}}
                             src="{{ (resources.Get $d.img).RelPermalink }}"
                         >
                         </div>
@@ -219,59 +192,9 @@
                                 </div>
                             </li> 
                             {{end}}
-                            <!-- <li>
-                                <div class="description desc-title" style="bottom: -50px;">顿悟</div>
-                                <span></span>
-                                <div class="tip bottom" style="position: absolute;
-                                top: -85px;"><p style="color: #000000;">2016.11.12</p><div class="arrow"></div></div>
-                            </li> -->
-                           <!--  <li>
-                                <div class="description" style="top: -50px;">    
-                                <div class="desc-title">PoC</div>
-                                    实现rune原型
-                                </div>
-                                <span></span>
-                                <div class="tip top"><p style="color: #000000;">2020.02</p><div class="arrow top"></div></div>
-                            </li> -->
-                            <!-- <li>
-                                <div class="description desc-long" style="bottom: -135px;">
-                                    <div class="desc-title">项目开源</div>
-                                    发布0.1.0版本<br>
-                                    首先支持Occlum enclave runtime<br>
-                                    基于SGX 1硬件
-                                </div>
-                                <span></span>
-                                <div class="tip bottom" style="position: absolute;
-                                top: -85px;"><p style="color: #000000;">2020.05</p><div class="arrow"></div></div>
-                                 
-                            </li> -->
-                            <!-- <li>
-                                <div class="description desc-longer" style="top: -75px;">    
-                                <div class="desc-title">发布0.2.0版本</div>
-                                开源了shim和runectl（后更名为sgx-tools）<br>
-                                从host侧加载PAL<br>
-                                PAL API更新为v2</div>
-                                <span></span>
-                                <div class="tip top"><p style="color: #000000;">2020.06</p><div class="arrow top"></div></div>
-                                 
-                            </li>
-                            <li>
-                                <div class="description desc-long" style="bottom: -135px;">
-                                <div class="desc-title">发布0.3.0版本</div>
-                                支持创建机密计算K8s集群<br>
-                                适配v33 SGX in-tree驱动<br>
-                                提供RPM/DEB安装包</div>
-                                <span></span>
-                                <div class="tip bottom" style="position: absolute;
-                                top: -85px;"><p style="color: #000000;">2020.07</p><div class="arrow"></div></div>
-                            </li> -->
-                            <!-- <li>
-                            </li> -->
-                            
+                            <li></li>
                         </ul>
                         <a class="sPrev"><img src="{{ (resources.Get "/img/left.png").RelPermalink }}" /></a>
-                        <!-- <img src="{{ (resources.Get "/img/left.png").RelPermalink }}" />
-                        <img src="{{ (resources.Get "/img/right.png").RelPermalink }}" /> -->
                         <a class="sNext"><img src="{{ (resources.Get "/img/right.png").RelPermalink }}" /></a>
                     </div>
                 </div>
@@ -300,7 +223,7 @@
                 </div>
                 <div class="img-container">
                     <div>
-                        <img {{if isset $d "img_width"}}style="width:{{$d.img_width}}"{{end}}
+                        <img {{if isset $d "img_width"}}style="width:{{$d.img_width}};height:auto"{{end}}
                         src="{{ (resources.Get $d.img).RelPermalink }}"
                     >
                     </div>
