@@ -21,20 +21,20 @@
     //根据浏览器语言自动切换主页面
     console.log(navigator.language,navigator.browserLanguage)
     var language = navigator.appName == 'Netscape'?navigator.language:navigator.browserLanguage;
-    if(language.indexOf('en') > -1) {  //english
+    if(language.indexOf('en') > -1) {  //浏览器语言为english时，自动切换
         if(localStorage.getItem("isJudgment") == 1){
             re()
         }else{
             document.location.href = '/en/';
             localStorage.setItem("isJudgment",1)
         }
-    }else{ //chinese
-        if(localStorage.getItem("isJudgment") == 1){
-            re()
-        }else{
-            document.location.href = '/';
-            localStorage.setItem("isJudgment",1)
-        }
+    }else{ //浏览器语言为chinese,不自动切换
+        // if(localStorage.getItem("isJudgment") == 1){
+        //     re()
+        // }else{
+        //     document.location.href = '/';
+        //     localStorage.setItem("isJudgment",1)
+        // }
     }
     function re(){
         localStorage.removeItem("isJudgment")
